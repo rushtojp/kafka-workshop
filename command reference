@@ -1,0 +1,38 @@
+##########producer command ############
+
+PS C:\kafka_2.13-4.1.0\bin\windows> .\kafka-console-producer.bat --bootstrap-server 127.0.0.1:9092 --topic first_topic
+2025-09-08T02:35:41.926448400Z main ERROR Reconfiguration failed: No configuration found for '266474c2' at 'null' in 'null'
+>hello
+>how are you
+>whats going on!
+>
+##################
+############## consumer command ###########
+PS C:\kafka_2.13-4.1.0\bin\windows> .\kafka-console-consumer.bat --bootstrap-server 127.0.0.1:9092 --topic first_topic --from-beginning
+2025-09-08T02:39:44.910501200Z main ERROR Reconfiguration failed: No configuration found for '266474c2' at 'null' in 'null'
+hello
+how are you
+whats going on!
+
+###################
+Get list of topics : 
+
+curl http://localhost:8082/topics
+
+PS C:\Users\DELL> curl http://localhost:8082/topics
+
+
+StatusCode        : 200
+StatusDescription : OK
+Content           : {91, 34, 102, 105...}
+RawContent        : HTTP/1.1 200 OK
+                    Vary: Accept-Encoding, User-Agent
+                    Transfer-Encoding: chunked
+                    Content-Type: application/vnd.kafka.v2+json
+                    Date: Mon, 08 Sep 2025 03:04:03 GMT
+
+                    ["first_topic"]
+Headers           : {[Vary, Accept-Encoding, User-Agent], [Transfer-Encoding, chunked], [Content-Type,
+                    application/vnd.kafka.v2+json], [Date, Mon, 08 Sep 2025 03:04:03 GMT]}
+RawContentLength  : 15
+
