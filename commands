@@ -1,0 +1,20 @@
+command reference
+
+ ./kafka-topics.bat --create --bootstrap-server localhost:9092 --replication-factor 1 --partitions 3 --topic myorder10
+
+docker-compose up -d
+
+docker-compose ps
+
+docker exec -it kafka-broker bash
+
+kafka-topics --create --topic first_topic --bootstrap-server localhost:9092 --replication-factor 1 --partitions 1
+
+kafka-topics --list --bootstrap-server localhost:9092
+
+kafka-console-producer --topic first_topic --bootstrap-server localhost:9092
+
+kafka-console-consumer --topic first_topic --from-beginning --bootstrap-server localhost:9092
+
+mvn clean install
+
